@@ -2,12 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import ClientLogin from './components/ClientLogin';
 import reportWebVitals from './reportWebVitals';
+import ConstructionScheduling from './components/ConstructionScheduling';
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename="/">
+      <Routes>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route path="/client-login">
+          <ClientLogin />
+        </Route>
+        <Route location="tenant.klinter.ai" path="/scheduling">
+          <ConstructionScheduling />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
