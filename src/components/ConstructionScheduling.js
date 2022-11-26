@@ -83,7 +83,7 @@ export default class ConstructionScheduling extends React.Component {
     //   svg.append("g")
     //       .call(d3.axisLeft(y));
 
-    });
+    // });
   }
 
   fetchActivityList() {
