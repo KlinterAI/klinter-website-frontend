@@ -1,15 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react";
 import '../App.css';
 
 function App() {
-  let [authMode, setAuthMode] = useState("signin")
+  let [authMode, setAuthMode] = useState("signin");
+  let [navigate, setNavigate] = useState("home");
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
 
   const submit = (event) => {
-    window.location.assign("http://tenant.klinter.ai/scheduling");
+    setNavigate("submit");
   }
 
   if (authMode === "signin") {
@@ -41,9 +42,9 @@ function App() {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary" onClick={(event) => submit(event)}>
+              <a className="btn btn-primary" href="http://tenant.klinter.ai/scheduling">
                 Submit
-              </button>
+              </a>
             </div>
             <p className="text-center mt-2">
               Forgot <a href="#">password?</a>

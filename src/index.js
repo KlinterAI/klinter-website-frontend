@@ -11,21 +11,19 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+var output = "";
+
+if(window.location.pathname == "/") {
+  output = <App />;
+} else if(window.location.pathname == "/client-login") {
+  output = <ClientLogin />;
+} else if(window.location.pathname == "/scheduling" && window.location.hostname == "tenant.klinter.ai") {
+  output = <ConstructionScheduling />;
+}
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/">
-      <Routes>
-        <Route exact path="/">
-          <App />
-        </Route>
-        <Route path="/client-login">
-          <ClientLogin />
-        </Route>
-        <Route location="tenant.klinter.ai" path="/scheduling">
-          <ConstructionScheduling />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    {output}
   </React.StrictMode>
 );
 
