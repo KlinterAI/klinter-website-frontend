@@ -42,7 +42,7 @@ function App() {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <a className="btn btn-primary" href="http://tenant.klinter.ai/scheduling">
+              <a className="btn btn-primary" href="https://klinterai-tenant.vercel.app/scheduling">
                 Submit
               </a>
             </div>

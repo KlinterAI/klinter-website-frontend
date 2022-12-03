@@ -17,7 +17,7 @@ if(window.location.pathname == "/") {
   output = <App />;
 } else if(window.location.pathname == "/client-login") {
   output = <ClientLogin />;
-} else if(window.location.pathname == "/scheduling" && window.location.hostname == "tenant.klinter.ai") {
+} else if(window.location.pathname == "/scheduling" && window.location.hostname == "klinterai-tenant.vercel.app") {
   output = <ConstructionScheduling />;
 }
 
